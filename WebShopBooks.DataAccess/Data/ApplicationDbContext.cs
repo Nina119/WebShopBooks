@@ -12,10 +12,23 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<Category> Categories { get; set; }
     public DbSet<Product> Products { get; set; }
+    public DbSet<Company> Companies { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Category>().HasData(
+        modelBuilder.Entity<Company>().HasData(
+            new
+            {
+                Id = 1,
+                Name = "Kompanija",
+                StreetAddress = "Ulica",
+                City = "Osijek",
+                State = "OBZ",
+                PostalCode = "31000",
+                PhoneNumber = "0993132524"
+            });
+
+    modelBuilder.Entity<Category>().HasData(
             new
             {
                 Id = 1,

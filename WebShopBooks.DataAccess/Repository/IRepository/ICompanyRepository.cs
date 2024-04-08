@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebShopBooks.Models.Models;
 
 namespace WebShopBooks.DataAccess.Repository.IRepository;
 
-public interface IUnitOfWork
+public interface ICompanyRepository : IRepository<Company>
 {
-    ICompanyRepository Company { get; }
-    ICategoryRepository Category { get; }
-    IProductRepository Product { get; }
-    void Save();
+    void Update(Company company);
 }
